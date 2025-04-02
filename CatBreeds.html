@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat Breeds - Cat Lovers</title>
+    <style>
+        body { 
+            font-family: Arial, sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            height: auto;
+          overflow-y: scroll;
+          overflow-x: hidden;
+            position: relative;
+          
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://img.freepik.com/premium-photo/cat-sleeping-surface_976047-3941.jpg');
+            background-size: cover;;
+            background-position: center;
+            filter: blur(5px);
+            z-index: -1; 
+        }
+
+        header {
+            background-color:rgb(0, 89, 18);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            position: relative;
+            z-index: 1; 
+        }
+
+        .header-title {
+            font-size: 4rem;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0px 3px 2px rgb(0, 0, 0);
+     
+        }
+
+    
+        .nav-links {
+            display: flex;
+        }
+
+        .nav-links a {
+            margin-left: 50px;
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            font-size: 1.2rem;
+           
+        
+        }
+
+     
+        .breeds-section {
+            text-align: center;
+            padding: 20px 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .breeds-section h1 {
+            font-size: 4rem;
+            color: #000000;
+            text-shadow: 0px 3px 2px rgb(255, 255, 255);
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .breeds-section p {
+           
+            font-size: 2rem;
+            color: rgb(0, 0, 0);
+            margin-bottom: 10px;
+        }
+
+       
+        .breed-card-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 30px;
+    padding: 20px;
+    margin:0 60px ;
+    justify-content: center; 
+}
+
+.breed-card {
+    width: 100%; 
+    max-width: 300px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+}
+
+.breed-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.breed-card h3 {
+    font-size: 1.6rem;
+    color: #0d5e00;
+    margin-top: 10px;
+}
+
+.breed-card p {
+    font-size: 1.2rem;
+    color: #333;
+    display: none;
+}
+
+.breed-card a {
+    display: none;
+}
+.breed-card:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+.breed-card.active {
+    background-color: #dfffd5dc; 
+    transform: scale(1.05);
+}
+
+.breed-card.active p,
+.breed-card.active a {
+    display: block;
+}
+
+     
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-title">Cat Lovers</div>
+        <div class="nav-links">
+            <a href="Home.html">Home</a>
+            <a href="AboutCats.html">About</a>
+            <a href="CatBreeds.html">Cat Breeds</a>
+            <a href="CatCareTips.html">Cat Care Tips</a>
+        </div>
+    </header>
+
+    <div class="breeds-section">
+        <h1>Popular Cat Breeds</h1>
+        <p>Discover some of the most popular and unique cat breeds around the world!</p>
+
+        <div class="breed-card-container">
+           
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://1.bp.blogspot.com/-Bmt0XSXxkT4/VGOdlJtH65I/AAAAAAAATZc/VtHhu551_JI/s1600/Abyssinian%2Bcat.jpg" alt="Abyssinian Cat">
+                <h3>Abyssinian</h3>
+                <p>Abyssinians are one of the oldest and most popular cat breeds. They are known for their graceful, lithe body and unique, ticked fur. Abyssinians are playful, intelligent, and energetic cats, always curious and active.</p>
+                <a href="https://www.thesprucepets.com/abyssinian-cat-breed-profile-4797632" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://d17fnq9dkz9hgj.cloudfront.net/breed-uploads/2018/08/american-bobtail-card-small.jpg?bust=1535570071" alt="American Bobtail">
+                <h3>American Bobtail</h3>
+                <p>Known for their short, stubby tails, American Bobtails are playful and affectionate. They are intelligent, easy to train, and thrive in active households. Their unique tail makes them stand out.</p>
+                <a href="https://cats.com/cat-breeds/american-bobtail" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.zooplus.de/magazin/wp-content/uploads/2017/04/american-curl-kitten-cremefarbe.jpg" alt="American Curl">
+                <h3>American Curl</h3>
+                <p>American Curls are easily recognized by their unique ears that curl backward. They are friendly, playful, and social cats that love attention. Their curly ears make them one of the most distinctive breeds.</p>
+                <a href="https://www.thesprucepets.com/american-curl-full-profile-history-and-care-4705972" target="_blank">For more info</a>
+            </div>
+                               
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.millaskats.com/wp-content/uploads/2023/12/Kyle_MAC4688-Edit.jpg" alt="American Shorthair">
+                <h3>American Shorthair</h3>
+                <p>American Shorthairs are known for their muscular build and calm demeanor. They are independent but also affectionate and make great family pets due to their even temperament.</p>
+                <a href="https://www.thesprucepets.com/american-shorthair-cat-breed-profile-4774399" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://th.bing.com/th/id/OIP.hpxWPNGwN7dm8tlXWx-NnwHaDB?rs=1&pid=ImgDetMain" alt="American Wirehair">
+                <h3>American Wirehair</h3>
+                <p>Known for their wiry coat, American Wirehairs are affectionate, playful, and intelligent. They enjoy human company and adapt easily to various living situations.</p>
+                <a href="https://www.thesprucepets.com/american-wirehair-cat-breed-profile-4769435" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Old-Style_Balinese_Cat.png" alt="Balinese">
+                <h3>Balinese</h3>
+                <p>The Balinese is a long-haired variety of the Siamese, known for its elegant appearance and striking blue eyes. These cats are vocal, affectionate, and social, often forming strong bonds with their owners.</p>
+                <a href="https://www.thesprucepets.com/balinese-cat-full-profile-history-and-care-4686126" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/2bZqxRWDSaThm4AOt2Gh3ILd0qs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-140000553-5bd2454846e0fb0051a52178.jpg" alt="Bengal">
+                <h3>Bengal</h3>
+                <p>Bengal cats are known for their stunning, wild appearance, resembling miniature leopards. They are active, playful, and highly intelligent, requiring a lot of attention and stimulation.</p>
+                <a href="https://www.thesprucepets.com/bengal-cats-1238154" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/-BtAlnrD1D--oRhZKkpLqbg5Ghg=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-623368786-f66c97ad6d2d494287b448415f4340a8.jpg" alt="Birman">
+                <h3>Birman</h3>
+                <p>Birman cats have a beautiful silky coat and striking blue eyes. They are affectionate, social, and playful, often forming close bonds with their families.</p>
+                <a href="https://www.thesprucepets.com/birman-cat-breed-profile-characteristics-and-care-5220182" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/Swzyeh82uUcROMC5HIR4LMzoa4o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1319774380-c3da91f9259a47e0966007f8e10690ba.jpg" alt="British Shorthair">
+                <h3>British Shorthair</h3>
+                <p>British Shorthairs are calm, independent cats with a round face and plush coat. They are great companions and are known for being affectionate and adaptable to various living situations.</p>
+                <a href="https://www.thesprucepets.com/thmb/Swzyeh82uUcROMC5HIR4LMzoa4o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1319774380-c3da91f9259a47e0966007f8e10690ba.jpg" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/5O5UnBJMRlkjFRi2Fzv2VhT2a9o=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/burmese-cat-breed-profile-4584510-hero-b7e3ecbe46ce4dc18a15351f8224b331.jpg" alt="Burmese">
+                <h3>Burmese</h3>
+                <p>Burmese cats have a sleek, muscular body and a silky coat. They are affectionate, playful, and very people-oriented, often following their owners around the house.</p>
+                <a href="https://www.thesprucepets.com/burmese-cat-breed-profile-4584510" target="_blank">For more info</a>
+            </div>
+                   
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/C9pggUFnq8qcCi22sln2RY4Hi68=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1286678957-0af3fa8fa9ae45fcbb7da3a98320b64d.jpg" alt="Cornish Rex">
+                <h3>Cornish Rex</h3>
+                <p>The Cornish Rex is known for its soft, wavy coat and slender, graceful body. They are intelligent, energetic, and playful cats, often seeking attention from their owners.</p>
+                <a href="https://www.thesprucepets.com/learn-all-about-the-cornish-rex-cat-4694497" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/_Q27UpUbAT4e7-v46H3mOGcxDoQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/PersonPettingDevonRex-2208a01bec864963a2d1137e1570c49a.jpg" alt="Devon Rex">
+                <h3>Devon Rex</h3>
+                <p>Devon Rex cats have a distinct curly coat and large ears. They are affectionate, playful, and active, known for their social nature and high energy levels.</p>
+                <a href="https://www.thesprucepets.com/devon-rex-cat-breed-profile-4693660" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/UisKVwmJa6XgeLxRQ7UA1m_fXWw=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-469019865-3e040624b88e42d0b2d749c9e8897f9f.jpg" alt="Exotic Shorthair">
+                <h3>Exotic Shorthair</h3>
+                <p>Exotic Shorthairs are similar to Persians but with shorter coats. They are calm, affectionate, and easygoing, making them great pets for families and individuals alike.</p>
+                <a href="https://www.thesprucepets.com/exotic-shorthair-cat-breed-profile-4774331" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/Q75WZkSOOumlUSBEvmLl-rlXsdo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/himalayan-cat-breed-profile-4691062-02-e22d405fca8b4d8fba67aadadd8c48df.jpg" alt="Himalayan">
+                <h3>Himalayan</h3>
+                <p>The Himalayan is a cross between the Persian and the Siamese. They have a beautiful long coat with striking blue eyes and are known for being affectionate and calm.</p>
+                <a href="https://www.thesprucepets.com/himalayan-cat-breed-profile-4691062" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/WR9Ol7gg2gUdf0ru3b7GG3bYOfE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1026178532-2c9309ac4f57454880fe83d87ea8ddc4.jpg" alt="Japanese Bobtail">
+                <h3>Kurilian Bobtail</h3>
+                <p>Known for their short, bobbed tails, Japanese Bobtails are energetic, playful, and affectionate cats. They are a traditional breed in Japan, often seen as a symbol of good luck.</p>
+                <a href="https://www.thesprucepets.com/kurilian-bobtail-cat-breed-profile-5186554" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/aWULXjTWxZbCJ4GixA7JMw8K15w=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1189893683-e0ff70596b3b4f0687ba573e5a671f74.jpg" alt="Maine Coon">
+                <h3>Maine Coon</h3>
+                <p>Maine Coons are one of the largest domestic cat breeds, known for their tufted ears and bushy tails. They are friendly, intelligent, and adaptable cats that enjoy being around people.</p>
+                <a href="https://www.thesprucepets.com/maine-coon-cat-breed-profile-characteristics-and-care-5221962" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/Q4MmW2lKS5b4zArFm02FI2lXeng=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/munchkin-cat-relaxing-in-the-garden-johannesburg-667587109-57d9bb0f5f9b5865168d616a.jpg" alt="Munchkin">
+                <h3>Munchkin</h3>
+                <p>Munchkins are characterized by their short legs, which give them a unique appearance. Despite their small stature, they are energetic, playful, and love interacting with their owners.</p>
+                <a href="https://www.thesprucepets.com/munchkin-cat-profile-551883" target="_blank">For more info</a>
+            </div>
+                   
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/yihs4iXfPFJKbAHI22-NDWcLCVs=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/norwegian-forest-cat-4170085-fe84aa86023446c4b64236ddfbdefd2b.jpg" alt="Norwegian Forest Cat">
+                <h3>Norwegian Forest Cat</h3>
+                <p>The Norwegian Forest Cat is known for its thick, water-resistant coat and large size. These cats are friendly, intelligent, and independent, often enjoying outdoor activities.</p>
+                <a href="https://www.thesprucepets.com/norwegian-forest-cat-4170085" target="_blank">For more info</a>
+            </div>
+            
+          
+                               
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/AyzHgPQM_X8OKhXEd8XTVIa-UT0=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-145577979-d97e955b5d8043fd96747447451f78b7.jpg" alt="Ragdoll">
+                <h3>Ragdoll</h3>
+                <p>Ragdolls are large, affectionate cats that are known for their relaxed demeanor. They often go limp when picked up, hence the name "Ragdoll," and love being around their owners.</p>
+                <a href="https://www.thesprucepets.com/ragdoll-cat-breed-profile-4583144" target="_blank">For more info</a>
+            </div>
+                               
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/lr5y4xZ9tsgj5ccOKPY1AI-hL3s=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-1198704735-69e2d11cba434cb28a3c9e6caae9d128.jpg" alt="Siberian">
+                <h3>Siberian</h3>
+                <p>Siberians are sturdy, large cats with a thick, waterproof coat. They are known for their affectionate nature, intelligence, and playful behavior, making them great family pets.</p>
+                <a href="https://www.thesprucepets.com/siberian-cat-4178148" target="_blank">For more info</a>
+            </div>
+
+           
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/UnF3VYWJbMXAqbVxtRW4YXRguMo=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/sphynx-cat--159462605-5bc4cc6b46e0fb0026b71ea7.jpg" alt="Sphynx">
+                <h3>Sphynx</h3>
+                <p>The Sphynx is a hairless breed known for its wrinkled skin and large ears. Despite their lack of fur, they are incredibly affectionate, friendly, and energetic cats that love attention.</p>
+                <a href="https://www.thesprucepets.com/sphynx-cat-4176530" target="_blank">For more info</a>
+
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/OPeLRwHZBIWwGDVY1GX4rPFw-EY=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/savannah-cat-4ec08e9efe40457a8f73a2af24fcdcc3.jpeg" alt="Savannah">
+                <h3>Savannah</h3>
+                <p>Savannah cats are a cross between domestic cats and servals, a wild African cat. They have a wild appearance with large ears and long legs but are friendly, intelligent, and active.</p>
+                <a href="https://www.thesprucepets.com/savannah-breed-profile-554212" target="_blank">For more info</a>
+
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/nj1A8s7CG9g79yfJS5JId23q_ac=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-126400983-8aa5a604fa304f1da21c976c1b0b1de4.jpg" alt="Singapura">
+                <h3>Singapura</h3>
+                <p>Singapura cats are small, muscular cats with a playful and curious nature. They are affectionate, people-oriented, and enjoy being the center of attention in their household.</p>
+                <a href="https://www.thesprucepets.com/singapura-cat-breed-profile-5114523" target="_blank">For more info</a>
+
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/AZOBTKokDKdVUdVA79YwknaxOhA=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-514937248-363cfffc62414aa0aee6afb7648e9027.jpg" alt="Somali">
+                <h3>Somali</h3>
+                <p>Somali cats are known for their beautiful ticked coats and playful personalities. They are intelligent, curious, and love interacting with their families.</p>
+                <a href="https://www.thesprucepets.com/somali-cat-breed-profile-5191399" target="_blank">For more info</a>
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/XzrWS-uP-ZZ_3wPDvPwtk5heF7A=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/scottish-fold-profile-551898-hero-4df6b3c3495b4cbf97b3890dca168540.JPG" alt="Scottish Fold">
+                <h3>Scottish Fold</h3>
+                <p>Scottish Folds are easily recognizable for their unique folded ears. They are calm, affectionate, and enjoy being with their owners, making them great companion pets.</p>
+                <a href="https://www.thesprucepets.com/scottish-fold-profile-551898" target="_blank">For more info</a>
+
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/Js24HPRon2qc1YQ_L2aAhuXoqSQ=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-87584783-438490f69bac4ac7b90a75a70e76eef6.jpg" alt="Manx">
+                <h3>Manx</h3>
+                <p>The Manx is a tailless breed, known for its round face and muscular body. They are friendly, playful cats that are well-suited to family life and often get along with children and other pets.</p>
+                <a href="https://www.thesprucepets.com/manx-cat-4584387" target="_blank">For more info</a>
+
+            </div>
+            
+            <div class="breed-card" onclick="toggleDescription(event)">
+                <img src="https://www.thesprucepets.com/thmb/OAlFrGPcMjUuv2PwqPU0Yij0jB8=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/GettyImages-467332793-8635a1bd98a644a6946a97dd4bc287f8.jpg" alt="Turkish Van">
+                <h3>Turkish Van</h3>
+                <p>Turkish Vans are known for their striking color patterns and love for water. They are independent, energetic, and intelligent cats, often enjoying swimming and outdoor activities.</p>
+                <a href="https://www.thesprucepets.com/turkish-van-cat-breed-profile-4772611" target="_blank">For more info</a>
+
+            </div>
+            
+        </div>
+    </div>
+
+   
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    const breedCards = document.querySelectorAll(".breed-card");
+
+    breedCards.forEach(card => {
+        card.addEventListener("click", function () {
+      
+            breedCards.forEach(otherCard => {
+                if (otherCard !== card) {
+                    otherCard.classList.remove("active"); 
+                    otherCard.querySelector("p").style.display = "none";
+                    otherCard.querySelector("a").style.display = "none";
+                }
+            });
+
+           
+            const details = card.querySelector("p");
+            const link = card.querySelector("a");
+
+            if (details.style.display === "block") {
+                details.style.display = "none";
+                link.style.display = "none";
+                card.classList.remove("active"); 
+            } else {
+                details.style.display = "block";
+                link.style.display = "block";
+                card.classList.add("active"); 
+            }
+        });
+    });
+});
+
+
+    </script>
+</body>
+</html>
